@@ -31,15 +31,15 @@ def start_level2
 end
 
 game = Game.new
-# start_level1
-# loop do
-#   points, errors = game.play_level1(points,errors)
-#   break if points >= 20
-#   if errors > 3
-#     puts "Du hast mehr dann 3 Fehler gemacht!!"
-#   	start_level1
-#   end	
-# end
+start_level1
+loop do
+  points, errors = game.play_level1(points,errors)
+  break if points >= 20
+  if errors > 3
+    puts "Du hast mehr dann 3 Fehler gemacht!!"
+  	start_level1
+  end	
+end
 
 start_level2
 points = 0
