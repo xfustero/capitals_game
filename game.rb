@@ -34,7 +34,7 @@ class Game
     @pais_capital[:Island] = "Reykjavík"
     @pais_capital[:Lettland] = "Riga"
     @pais_capital[:Italien] = "Rom"
-    @pais_capital[:San_Marino] = "San Marino"
+    #@pais_capital[:San_Marino] = "San Marino"
     @pais_capital[:Bosnien_und_Herzegowina] = "Sarajevo"
     @pais_capital[:Mazedonien] = "Skopje"
     @pais_capital[:Bulgarien] = "Sofia"
@@ -88,7 +88,7 @@ class Game
    return used_capitals
   end
  
-  def play_level1(points)
+  def play_level1(points, errors)
   	capital_options = []
     @country = self.get_random_country
     @capital = self.get_capital_answer(@country)
@@ -110,8 +110,9 @@ class Game
     else
       puts "Falsch!"
       puts ""
+      errors +=1
     end
-    return points 
+    return points, errors
   end
 
   def play_level2(points)
